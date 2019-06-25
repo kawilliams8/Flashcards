@@ -34,7 +34,23 @@ describe('Round', function() {
     const round = new Round(deck);
     expect(round.turns).to.equal(0);
     round.takeTurn();
-    expect(round.turns).to.equal(1);
+    round.takeTurn();
+    expect(round.turns).to.equal(2);
+  })
+
+  it('should keep track of all incorrect guesses', function () {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+    expect(round.incorrectGuesses.length).to.equal(0);
+    round.takeTurn('capybara');
+    expect(round.incorrectGuesses[0]).to.equal(1);
+    round.takeTurn('spleen');
+    expect(round.incorrectGuesses[1]).to.equal(14);
+    round.takeTurn('Lex');
+    expect(round.incorrectGuesses[2]).to.equal(12);
   })
 
 });

@@ -19,4 +19,9 @@ describe('Game', function() {
     expect(game).to.be.an.instanceof(Game);
   });
 
+  it('should start the game', function() {
+    const game = new Game();
+    game.start();
+  })
+
 });

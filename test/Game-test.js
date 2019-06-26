@@ -18,4 +18,16 @@ describe('Game', function() {
     game.start();
   })
 
+  it('should store what time the player started a round', function () {
+    const game = new Game();
+    game.start();
+    expect(this.startTime).to.be.a('number');
+  })
+
+  it('should store what time the player completed a round', function () {
+    const game = new Game();
+    game.start();
+    expect(this.endTime).to.be.a('number');
+  })
+
 });

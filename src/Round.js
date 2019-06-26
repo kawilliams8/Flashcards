@@ -30,17 +30,19 @@ class Round {
   }
 
   endRound() {
-    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
-    if (this.calculatePercentCorrect() < 90) {
-      console.log('Score higher than 90% correct to complete this round.');
+    this.game.endTime = Date.now();
+    this.timeDifference = this.game.endTime - this.game.startTime;
+  console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly! Time spent: ${Math.floor(this.timeDifference / 1000)} seconds.`);
+    if (this.calculatePercentCorrect() < 40) {
+      console.log(`Score higher than 40% correct to complete this round. Time spent: ${Math.floor(this.timeDifference / 1000)}. Begin again.`);
       this.game.start();
     } else if (this.calculatePercentCorrect() >= 75 && this.game.roundCount === 1) {
-      this.game.roundCount = 2;
+      this.game.roundCount ++;
       this.game.start();
     } else {
       console.log('** Game Over **')
     }
-    return (`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
+    return (`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly! Time spent: ${Math.floor(this.timeDifference / 1000)} seconds.`);
   }
 }
 

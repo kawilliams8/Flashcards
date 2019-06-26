@@ -9,9 +9,12 @@ class Game {
   constructor() {
     this.roundCount = 1;
     this.currentRound;
+    this.startTime;
+    this.endTime;
   }
   
   start() {
+    this.startTime = Date.now();
     const dataset = datasets[(this.roundCount - 1)];
     const cards = dataset.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
     const deck = new Deck(cards);

@@ -214,7 +214,7 @@ const javascriptTrivia = [{
   "id": 13,
   "question": "Which JavaScript method returns the smallest integer higher or equal to a number?",
   "answers": ["Math.ceil(x, y)", "Math.ceiling(x, y)", "Math.roundUp(x, y)"],
-  "correctAnswer": "Math.ceil()"
+  "correctAnswer": "Math.ceil(x, y)"
 }, {
   "id": 14,
   "question": "Which variable styles is function scoped, and not block scoped??",
@@ -232,9 +232,9 @@ const javascriptTrivia = [{
   "correctAnswer": "assignment operator"
 }, {
   "id": 17,
-  "question": "Which characters join to come the 'logical or'?",
+  "question": "Which characters jointly become the 'logical or'?",
   "answers": ["&&", "++", "||"],
-  "correctAnswer": "callback function and initializer"
+  "correctAnswer": "||"
 }, {
   "id": 18,
   "question": "Which of the following are truthy?",
@@ -249,7 +249,7 @@ const javascriptTrivia = [{
   "id": 20,
   "question": "Which paradigm uses objects to model real world things that we want to represent inside our programs?",
   "answers": ["object oriented programming", "function oriented programming"],
-  "correctAnswer": "false"
+    "correctAnswer": "object oriented programming"
 }, {
   "id": 21,
   "question": "What term is used for allowing new objects to take on the data and behavior of their parent classes?",
@@ -294,7 +294,7 @@ const javascriptTrivia = [{
   "id": 29,
   "question": "When called on to whiteboard a problem, what should be in your non-dominant hand?",
   "answers": ["a second marker", "a turkey club", "an eraser"],
-  "correctAnswer": "eraser"
+  "correctAnswer": "an eraser"
 }, {
   "id": 30,
   "question": "What term is used for the tendency to focus on one particular piece of information when making decisions or problem-solving?",

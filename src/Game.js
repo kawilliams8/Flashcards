@@ -6,13 +6,12 @@ const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 
 class Game {
-  constructor(){
-    this.roundCount = 0;
+  constructor() {
+    this.roundCount = 1;
     this.currentRound;
   }
   
   start() {
-    this.roundCount++;
     const dataset = datasets[(this.roundCount - 1)];
     const cards = dataset.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
     const deck = new Deck(cards);
@@ -21,8 +20,10 @@ class Game {
     this.printQuestion(this.currentRound);
   }
 
-  printMessage(deck, round) {
-    console.log(`Welcome to FlashCards! You are playing Round ${this.roundCount} with ${deck.countCards()} cards.
+  printMessage(deck) {
+    console.log(`-----------------------------------------------------------------------
+Welcome to FlashCards! You are playing Round ${this.roundCount} with ${deck.countCards()} cards.
+Answer more than 90% of the questions correctly to complete this round.
 -----------------------------------------------------------------------`)
   }
 

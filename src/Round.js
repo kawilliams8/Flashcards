@@ -1,11 +1,12 @@
-const Turn = require('../src/Turn')
+const Turn = require('../src/Turn');
 
 class Round {
-  constructor(deck) {
+  constructor(deck, game) {
     this.deck = deck || [];
     this.currentCard;
     this.turns = 0;
     this.incorrectGuesses = [];
+    this.game = game;
   }
 
   returnCurrentCard() {
@@ -30,6 +31,11 @@ class Round {
 
   endRound() {
     console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
+    if (this.game.roundCount === 1) {
+      this.game.start();
+    } else {
+      console.log('** Game Over **')
+    }
     return (`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
   }
 }

@@ -15,7 +15,7 @@ This project includes three extentions beyond the required iterations: a second 
 
 ## Results
 
-![flashcards gif](ttps://github.com/kawilliams8/Flashcards/blob/master/2019-06-27%2015.15.11.gif)
+![flashcards gif](https://github.com/kawilliams8/Flashcards/blob/master/2019-06-27%2015.15.11.gif)
 
 ## Installation Instructions
 1. Clone down the Flashcards repository.
